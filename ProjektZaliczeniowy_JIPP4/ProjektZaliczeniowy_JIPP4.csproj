@@ -57,6 +57,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjektJIPP4_DanielMarkiewiczDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjektJIPP4_DanielMarkiewiczDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -70,6 +75,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ProjektJIPP4_DanielMarkiewiczDataSet.xsc">
+      <DependentUpon>ProjektJIPP4_DanielMarkiewiczDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjektJIPP4_DanielMarkiewiczDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjektJIPP4_DanielMarkiewiczDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjektJIPP4_DanielMarkiewiczDataSet.xss">
+      <DependentUpon>ProjektJIPP4_DanielMarkiewiczDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
