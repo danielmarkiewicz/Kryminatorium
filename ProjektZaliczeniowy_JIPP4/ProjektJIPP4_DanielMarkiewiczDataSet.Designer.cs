@@ -1599,13 +1599,24 @@ SELECT Id, DataWyroku, CzasOdsiadkiMiesiace, CzyPrawomocny, ZakladKarny, CzyAktu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, DataWyroku, CzasOdsiadkiMiesiace, CzyPrawomocny, ZakladKarny, CzyAktua" +
                 "lnieWykonywany, DataZakonczenia, SkazanyId, NumerSprawy, RodzajPrzestepstwa FROM" +
                 " dbo.OdbywaneWyroki";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT O.Id, O.Nazwisko, O.Imie, O.DataUrodzenia, O.CzyKobieta, ow.Id AS Expr1, ow.DataWyroku, ow.CzasOdsiadkiMiesiace, ow.CzyPrawomocny, ow.ZakladKarny, ow.CzyAktualnieWykonywany, ow.DataZakonczenia, ow.SkazanyId, 
+                  ow.NumerSprawy, ow.RodzajPrzestepstwa
+FROM     Osoba AS O INNER JOIN
+                  OdbywaneWyroki AS ow ON ow.SkazanyId = O.Id
+WHERE  (1 = 1) AND (O.Imie LIKE @Imie + '%') AND (O.Nazwisko LIKE @Nazwisko + '%')
+ORDER BY O.Nazwisko";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Imie", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Imie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwisko", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwisko", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1627,6 +1638,54 @@ SELECT Id, DataWyroku, CzasOdsiadkiMiesiace, CzyPrawomocny, ZakladKarny, CzyAktu
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual ProjektJIPP4_DanielMarkiewiczDataSet.OdbywaneWyrokiDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProjektJIPP4_DanielMarkiewiczDataSet.OdbywaneWyrokiDataTable dataTable = new ProjektJIPP4_DanielMarkiewiczDataSet.OdbywaneWyrokiDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPersonExecute(ProjektJIPP4_DanielMarkiewiczDataSet.OdbywaneWyrokiDataTable dataTable, string Imie, string Nazwisko) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Imie == null)) {
+                throw new global::System.ArgumentNullException("Imie");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Imie));
+            }
+            if ((Nazwisko == null)) {
+                throw new global::System.ArgumentNullException("Nazwisko");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Nazwisko));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjektJIPP4_DanielMarkiewiczDataSet.OdbywaneWyrokiDataTable GetDataByPersonExecute(string Imie, string Nazwisko) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Imie == null)) {
+                throw new global::System.ArgumentNullException("Imie");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Imie));
+            }
+            if ((Nazwisko == null)) {
+                throw new global::System.ArgumentNullException("Nazwisko");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Nazwisko));
+            }
             ProjektJIPP4_DanielMarkiewiczDataSet.OdbywaneWyrokiDataTable dataTable = new ProjektJIPP4_DanielMarkiewiczDataSet.OdbywaneWyrokiDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2102,11 +2161,25 @@ SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta FROM Osoba WHERE (Id = @Id)
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta FROM dbo.Osoba";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta\r\nFROM     Osoba AS o\r\nWHERE " +
+                " (1 = 1) AND (o.DataUrodzenia = @DataUrodzenia)\r\nORDER BY o.DataUrodzenia";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataUrodzenia", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DataUrodzenia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta\r\nFROM     Osoba AS o\r\nWHERE " +
+                " (1 = 1) AND (Imie LIKE @Imie + \'%\') AND (Nazwisko LIKE @Nazwisko + \'%\')\r\nORDER " +
+                "BY Nazwisko";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Imie", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Imie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwisko", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwisko", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2128,6 +2201,90 @@ SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta FROM Osoba WHERE (Id = @Id)
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable = new ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPersonDateOfBirth(ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable, string DataUrodzenia) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((DataUrodzenia == null)) {
+                throw new global::System.ArgumentNullException("DataUrodzenia");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(DataUrodzenia));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable GetDataByPersonDateOfBirth(string DataUrodzenia) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((DataUrodzenia == null)) {
+                throw new global::System.ArgumentNullException("DataUrodzenia");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(DataUrodzenia));
+            }
+            ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable = new ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        protected virtual int FillByPersonNameSurname(ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable, string Imie, string Nazwisko) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Imie == null)) {
+                throw new global::System.ArgumentNullException("Imie");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Imie));
+            }
+            if ((Nazwisko == null)) {
+                throw new global::System.ArgumentNullException("Nazwisko");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Nazwisko));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable GetDataByPersonNameSurname(string Imie, string Nazwisko) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Imie == null)) {
+                throw new global::System.ArgumentNullException("Imie");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Imie));
+            }
+            if ((Nazwisko == null)) {
+                throw new global::System.ArgumentNullException("Nazwisko");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Nazwisko));
+            }
             ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable = new ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

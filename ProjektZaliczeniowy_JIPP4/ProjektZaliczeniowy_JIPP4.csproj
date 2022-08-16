@@ -57,6 +57,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjektJIPP4_DanielMarkiewiczDataSet.cs">
+      <DependentUpon>ProjektJIPP4_DanielMarkiewiczDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProjektJIPP4_DanielMarkiewiczDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
