@@ -1,7 +1,7 @@
 ﻿
 namespace ProjektZaliczeniowy_JIPP4
 {
-    partial class Kartoteka
+    partial class MainFormKartoteka
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -35,6 +35,11 @@ namespace ProjektZaliczeniowy_JIPP4
             this.clockDigital = new System.Windows.Forms.Timer(this.components);
             this.lblDayName = new System.Windows.Forms.Label();
             this.panelButton = new System.Windows.Forms.Panel();
+            this.eclipseEditButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
+            this.eclipseDeleteButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
+            this.eclipseButtonExit = new ProjektZaliczeniowy_JIPP4.EclipseButton();
+            this.eclipseAddButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
+            this.eclipseSearchButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
             this.panelTime = new System.Windows.Forms.Panel();
             this.analogClockBox = new System.Windows.Forms.PictureBox();
             this.toolTipSearchButton = new System.Windows.Forms.ToolTip(this.components);
@@ -42,11 +47,6 @@ namespace ProjektZaliczeniowy_JIPP4
             this.toolTipDeleteButton = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipEditButton = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipCloseApp = new System.Windows.Forms.ToolTip(this.components);
-            this.eclipseEditButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
-            this.eclipseDeleteButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
-            this.eclipseButtonExit = new ProjektZaliczeniowy_JIPP4.EclipseButton();
-            this.eclipseAddButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
-            this.eclipseSearchButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
             this.panelButton.SuspendLayout();
             this.panelTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.analogClockBox)).BeginInit();
@@ -109,29 +109,6 @@ namespace ProjektZaliczeniowy_JIPP4
             this.panelButton.Name = "panelButton";
             this.panelButton.Size = new System.Drawing.Size(287, 622);
             this.panelButton.TabIndex = 14;
-            // 
-            // panelTime
-            // 
-            this.panelTime.Controls.Add(this.analogClockBox);
-            this.panelTime.Controls.Add(this.lblDayName);
-            this.panelTime.Controls.Add(this.lblDate);
-            this.panelTime.Controls.Add(this.lblTime);
-            this.panelTime.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelTime.Location = new System.Drawing.Point(287, 0);
-            this.panelTime.Margin = new System.Windows.Forms.Padding(4);
-            this.panelTime.Name = "panelTime";
-            this.panelTime.Size = new System.Drawing.Size(317, 622);
-            this.panelTime.TabIndex = 15;
-            // 
-            // analogClockBox
-            // 
-            this.analogClockBox.Location = new System.Drawing.Point(16, 15);
-            this.analogClockBox.Margin = new System.Windows.Forms.Padding(4);
-            this.analogClockBox.Name = "analogClockBox";
-            this.analogClockBox.Size = new System.Drawing.Size(285, 244);
-            this.analogClockBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.analogClockBox.TabIndex = 9;
-            this.analogClockBox.TabStop = false;
             // 
             // eclipseEditButton
             // 
@@ -204,8 +181,32 @@ namespace ProjektZaliczeniowy_JIPP4
             this.eclipseSearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.toolTipSearchButton.SetToolTip(this.eclipseSearchButton, "Wyszukiwanie w bazie danych Kartoteka");
             this.eclipseSearchButton.UseVisualStyleBackColor = false;
+            this.eclipseSearchButton.Click += new System.EventHandler(this.eclipseSearchButton_Click);
             // 
-            // Kartoteka
+            // panelTime
+            // 
+            this.panelTime.Controls.Add(this.analogClockBox);
+            this.panelTime.Controls.Add(this.lblDayName);
+            this.panelTime.Controls.Add(this.lblDate);
+            this.panelTime.Controls.Add(this.lblTime);
+            this.panelTime.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelTime.Location = new System.Drawing.Point(287, 0);
+            this.panelTime.Margin = new System.Windows.Forms.Padding(4);
+            this.panelTime.Name = "panelTime";
+            this.panelTime.Size = new System.Drawing.Size(317, 622);
+            this.panelTime.TabIndex = 15;
+            // 
+            // analogClockBox
+            // 
+            this.analogClockBox.Location = new System.Drawing.Point(16, 15);
+            this.analogClockBox.Margin = new System.Windows.Forms.Padding(4);
+            this.analogClockBox.Name = "analogClockBox";
+            this.analogClockBox.Size = new System.Drawing.Size(285, 244);
+            this.analogClockBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.analogClockBox.TabIndex = 9;
+            this.analogClockBox.TabStop = false;
+            // 
+            // MainFormKartoteka
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
@@ -218,7 +219,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Kartoteka";
+            this.Name = "MainFormKartoteka";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kartoteka";

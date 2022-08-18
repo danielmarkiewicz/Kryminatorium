@@ -16,7 +16,7 @@ namespace ProjektZaliczeniowy_JIPP4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Kartoteka());
+            Application.Run(new MainFormKartoteka());
         }
     }
 }

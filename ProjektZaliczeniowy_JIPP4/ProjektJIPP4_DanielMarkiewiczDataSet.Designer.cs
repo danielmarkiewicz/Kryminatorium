@@ -2246,7 +2246,7 @@ SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta FROM Osoba WHERE (Id = @Id)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        protected virtual int FillByPersonNameSurname(ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable, string Imie, string Nazwisko) {
+        public virtual int FillByPersonNameSurname(ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable, string Imie, string Nazwisko) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((Imie == null)) {
                 throw new global::System.ArgumentNullException("Imie");

@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ProjektZaliczeniowy_JIPP4
 {
-    public partial class Kartoteka : Form
+    public partial class MainFormKartoteka : Form
     {
         private Clock analogClock = new Clock();
-        public Kartoteka()
+        public MainFormKartoteka()
         {
             InitializeComponent();
         }
@@ -82,7 +82,13 @@ namespace ProjektZaliczeniowy_JIPP4
             {
                 Close();
             }
-            
+        }
+
+        private void eclipseSearchButton_Click(object sender, EventArgs e)
+        {
+            SearchForm search = new SearchForm();
+            search.Show();
+            Hide();
         }
     }
 }
