@@ -77,7 +77,12 @@ namespace ProjektZaliczeniowy_JIPP4
         
         private void eclipseButtonExit_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("Czy na pewno chcesz zamknąć program?", "Zamykanie Kartoteki", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Close();
+            }
+            
         }
     }
 }
