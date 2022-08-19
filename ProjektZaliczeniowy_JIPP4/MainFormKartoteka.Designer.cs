@@ -166,6 +166,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.eclipseAddButton.Text = "Dodaj";
             this.toolTipAddButton.SetToolTip(this.eclipseAddButton, "Dodawanie nowych danych do bazy Kartoteka");
             this.eclipseAddButton.UseVisualStyleBackColor = false;
+            this.eclipseAddButton.Click += new System.EventHandler(this.eclipseAddButton_Click);
             // 
             // eclipseSearchButton
             // 

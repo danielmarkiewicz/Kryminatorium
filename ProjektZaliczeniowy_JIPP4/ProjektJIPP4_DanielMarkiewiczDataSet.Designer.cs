@@ -917,14 +917,16 @@ namespace ProjektZaliczeniowy_JIPP4.ProjektJIPP4_DanielMarkiewiczDataSetTableAda
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plec", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plec", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Osoba] ([Nazwisko], [Imie], [DataUrodzenia], [CzyKobieta], [Pesel]) VALUES (@Nazwisko, @Imie, @DataUrodzenia, @CzyKobieta, @Pesel);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO Osoba
+                         (Nazwisko, Imie, DataUrodzenia, CzyKobieta, Pesel)
+VALUES        (@Nazwisko,@Imie,@DataUrodzenia,@CzyKobieta,@Pesel); 
 SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta, Pesel, Plec FROM Osoba WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwisko", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwisko", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Imie", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Imie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataUrodzenia", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataUrodzenia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CzyKobieta", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CzyKobieta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pesel", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pesel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwisko", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwisko", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Imie", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Imie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataUrodzenia", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DataUrodzenia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CzyKobieta", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "CzyKobieta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pesel", global::System.Data.SqlDbType.Char, 11, global::System.Data.ParameterDirection.Input, 0, 0, "Pesel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Osoba] SET [Nazwisko] = @Nazwisko, [Imie] = @Imie, [DataUrodzenia] = @DataUrodzenia, [CzyKobieta] = @CzyKobieta, [Pesel] = @Pesel WHERE (([Id] = @Original_Id) AND ([Nazwisko] = @Original_Nazwisko) AND ([Imie] = @Original_Imie) AND ([DataUrodzenia] = @Original_DataUrodzenia) AND ([CzyKobieta] = @Original_CzyKobieta) AND ([Pesel] = @Original_Pesel) AND ([Plec] = @Original_Plec));
@@ -963,15 +965,14 @@ SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta, Pesel, Plec FROM Osoba WHE
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT        Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta, Pesel, Plec\r\nFROM   " +
-                "         Osoba\r\nWHERE        (1 = 1) AND (Imie LIKE @Imie + \'%\')\r\nORDER BY Imie";
+                "         Osoba\r\nORDER BY Id DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Imie", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Imie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta, Pesel, Plec \r\nFROM dbo.Osob" +
-                "a\r\nWHERE 1 = 1\r\nAND Pesel LIKE @Pesel + \'%\'";
+            this._commandCollection[2].CommandText = "SELECT        Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta, Pesel, Plec\r\nFROM   " +
+                "         Osoba\r\nWHERE        (1 = 1) AND (Imie LIKE @Imie + \'%\')\r\nORDER BY Imie";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pesel", global::System.Data.SqlDbType.Char, 11, global::System.Data.ParameterDirection.Input, 0, 0, "Pesel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Imie", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Imie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta, Pesel, Plec FROM dbo.Osoba\r" +
@@ -1008,8 +1009,21 @@ SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta, Pesel, Plec FROM Osoba WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByName(ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable, string Imie) {
+        public virtual int FillByIdADD(ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByName(ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable, string Imie) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((Imie == null)) {
                 throw new global::System.ArgumentNullException("Imie");
             }
@@ -1028,48 +1042,12 @@ SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta, Pesel, Plec FROM Osoba WHE
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable GetDataByName(string Imie) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((Imie == null)) {
                 throw new global::System.ArgumentNullException("Imie");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Imie));
-            }
-            ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable = new ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByPESEL(ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable, string Pesel) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((Pesel == null)) {
-                throw new global::System.ArgumentNullException("Pesel");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Pesel));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable GetDataByPESEL(string Pesel) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((Pesel == null)) {
-                throw new global::System.ArgumentNullException("Pesel");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Pesel));
             }
             ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable dataTable = new ProjektJIPP4_DanielMarkiewiczDataSet.OsobaDataTable();
             this.Adapter.Fill(dataTable);
@@ -1193,7 +1171,7 @@ SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta, Pesel, Plec FROM Osoba WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nazwisko, string Imie, System.DateTime DataUrodzenia, bool CzyKobieta, string Pesel) {
+        public virtual int Insert(string Nazwisko, string Imie, string DataUrodzenia, bool CzyKobieta, string Pesel) {
             if ((Nazwisko == null)) {
                 throw new global::System.ArgumentNullException("Nazwisko");
             }
@@ -1206,7 +1184,12 @@ SELECT Id, Nazwisko, Imie, DataUrodzenia, CzyKobieta, Pesel, Plec FROM Osoba WHE
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Imie));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DataUrodzenia));
+            if ((DataUrodzenia == null)) {
+                throw new global::System.ArgumentNullException("DataUrodzenia");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DataUrodzenia));
+            }
             this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(CzyKobieta));
             if ((Pesel == null)) {
                 throw new global::System.ArgumentNullException("Pesel");

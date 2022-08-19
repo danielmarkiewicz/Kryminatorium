@@ -80,9 +80,20 @@ namespace ProjektZaliczeniowy_JIPP4
 
         private void eclipseSearchButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
             SearchForm search = new SearchForm();
             search.ShowDialog();
-            Hide();
+            search = null;
+            this.Show();
+        }
+
+        private void eclipseAddButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddForm addForm = new AddForm();
+            addForm.ShowDialog();
+            addForm = null;
+            this.Show();
         }
     }
 }
