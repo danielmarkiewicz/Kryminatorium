@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjektZaliczeniowy_JIPP4
@@ -38,7 +32,7 @@ namespace ProjektZaliczeniowy_JIPP4
             analogClock.time.Interval = 1000;
             analogClock.time.Tick += new EventHandler(this.analog_Tick);
             analogClock.time.Start();
-            
+
 
             clockDigital.Start();
         }
@@ -63,18 +57,18 @@ namespace ProjektZaliczeniowy_JIPP4
             analogClock.graphics.DrawString("9", new Font("Arial", 12), Brushes.Black, new PointF(0, 140));
 
             handCrood = analogClock.miunuteCrood(ss, analogClock.secondHand);
-            analogClock.graphics.DrawLine(new Pen(Color.Red, 1f), new Point(analogClock.positionX, analogClock.positionY), new Point(handCrood[0], handCrood[1])); 
-            
+            analogClock.graphics.DrawLine(new Pen(Color.Red, 1f), new Point(analogClock.positionX, analogClock.positionY), new Point(handCrood[0], handCrood[1]));
+
             handCrood = analogClock.miunuteCrood(mm, analogClock.minuteHand);
-            analogClock.graphics.DrawLine(new Pen(Color.Black, 2f), new Point(analogClock.positionX, analogClock.positionY), new Point(handCrood[0], handCrood[1])); 
-            
-            handCrood = analogClock.hourCrood(hh%12,mm, analogClock.hourHand);
+            analogClock.graphics.DrawLine(new Pen(Color.Black, 2f), new Point(analogClock.positionX, analogClock.positionY), new Point(handCrood[0], handCrood[1]));
+
+            handCrood = analogClock.hourCrood(hh % 12, mm, analogClock.hourHand);
             analogClock.graphics.DrawLine(new Pen(Color.Gray, 3f), new Point(analogClock.positionX, analogClock.positionY), new Point(handCrood[0], handCrood[1]));
 
             //
             analogClockBox.Image = analogClock.bitmap;
         }
-        
+
         private void eclipseButtonExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Czy na pewno chcesz zamknąć program?", "Zamykanie Kartoteki", MessageBoxButtons.YesNo,
@@ -87,7 +81,7 @@ namespace ProjektZaliczeniowy_JIPP4
         private void eclipseSearchButton_Click(object sender, EventArgs e)
         {
             SearchForm search = new SearchForm();
-            search.Show();
+            search.ShowDialog();
             Hide();
         }
     }
