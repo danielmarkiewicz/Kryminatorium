@@ -142,6 +142,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.eclipseEditButton.Text = "Edytuj";
             this.toolTipButton.SetToolTip(this.eclipseEditButton, "Edytowanie danych w bazie Kartoteka");
             this.eclipseEditButton.UseVisualStyleBackColor = false;
+            this.eclipseEditButton.Click += new System.EventHandler(this.eclipseEditButton_Click);
             // 
             // eclipseDeleteButton
             // 
@@ -206,7 +207,7 @@ namespace ProjektZaliczeniowy_JIPP4
             // MainFormKartoteka
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(604, 622);
             this.ControlBox = false;
             this.Controls.Add(this.panelTime);

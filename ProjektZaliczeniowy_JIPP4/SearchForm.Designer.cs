@@ -35,13 +35,6 @@ namespace ProjektZaliczeniowy_JIPP4
             this.labelName = new System.Windows.Forms.Label();
             this.labelSurname = new System.Windows.Forms.Label();
             this.dataGridViewSearch = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataUrodzeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.czyKobietaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.peselDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.osobaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projektJIPP4_DanielMarkiewiczDataSet = new ProjektZaliczeniowy_JIPP4.ProjektJIPP4_DanielMarkiewiczDataSet();
             this.osobaTableAdapter = new ProjektZaliczeniowy_JIPP4.ProjektJIPP4_DanielMarkiewiczDataSetTableAdapters.OsobaTableAdapter();
@@ -49,6 +42,13 @@ namespace ProjektZaliczeniowy_JIPP4
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
             this.toolTipButton = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipTextBox = new System.Windows.Forms.ToolTip(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataUrodzeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.czyKobietaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.peselDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.osobaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektJIPP4_DanielMarkiewiczDataSet)).BeginInit();
@@ -113,55 +113,6 @@ namespace ProjektZaliczeniowy_JIPP4
             this.dataGridViewSearch.Size = new System.Drawing.Size(776, 309);
             this.dataGridViewSearch.TabIndex = 24;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nazwiskoDataGridViewTextBoxColumn
-            // 
-            this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko";
-            this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
-            this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
-            this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imieDataGridViewTextBoxColumn
-            // 
-            this.imieDataGridViewTextBoxColumn.DataPropertyName = "Imie";
-            this.imieDataGridViewTextBoxColumn.HeaderText = "Imie";
-            this.imieDataGridViewTextBoxColumn.Name = "imieDataGridViewTextBoxColumn";
-            this.imieDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataUrodzeniaDataGridViewTextBoxColumn
-            // 
-            this.dataUrodzeniaDataGridViewTextBoxColumn.DataPropertyName = "DataUrodzenia";
-            this.dataUrodzeniaDataGridViewTextBoxColumn.HeaderText = "DataUrodzenia";
-            this.dataUrodzeniaDataGridViewTextBoxColumn.Name = "dataUrodzeniaDataGridViewTextBoxColumn";
-            this.dataUrodzeniaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // czyKobietaDataGridViewCheckBoxColumn
-            // 
-            this.czyKobietaDataGridViewCheckBoxColumn.DataPropertyName = "CzyKobieta";
-            this.czyKobietaDataGridViewCheckBoxColumn.HeaderText = "CzyKobieta";
-            this.czyKobietaDataGridViewCheckBoxColumn.Name = "czyKobietaDataGridViewCheckBoxColumn";
-            this.czyKobietaDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // peselDataGridViewTextBoxColumn
-            // 
-            this.peselDataGridViewTextBoxColumn.DataPropertyName = "Pesel";
-            this.peselDataGridViewTextBoxColumn.HeaderText = "Pesel";
-            this.peselDataGridViewTextBoxColumn.Name = "peselDataGridViewTextBoxColumn";
-            this.peselDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // plecDataGridViewTextBoxColumn
-            // 
-            this.plecDataGridViewTextBoxColumn.DataPropertyName = "Plec";
-            this.plecDataGridViewTextBoxColumn.HeaderText = "Plec";
-            this.plecDataGridViewTextBoxColumn.Name = "plecDataGridViewTextBoxColumn";
-            this.plecDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // osobaBindingSource
             // 
             this.osobaBindingSource.DataMember = "Osoba";
@@ -213,11 +164,61 @@ namespace ProjektZaliczeniowy_JIPP4
             // 
             this.toolTipTextBox.AutomaticDelay = 100;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nazwiskoDataGridViewTextBoxColumn
+            // 
+            this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko";
+            this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
+            this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
+            this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imieDataGridViewTextBoxColumn
+            // 
+            this.imieDataGridViewTextBoxColumn.DataPropertyName = "Imie";
+            this.imieDataGridViewTextBoxColumn.HeaderText = "Imie";
+            this.imieDataGridViewTextBoxColumn.Name = "imieDataGridViewTextBoxColumn";
+            this.imieDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataUrodzeniaDataGridViewTextBoxColumn
+            // 
+            this.dataUrodzeniaDataGridViewTextBoxColumn.DataPropertyName = "DataUrodzenia";
+            this.dataUrodzeniaDataGridViewTextBoxColumn.HeaderText = "DataUrodzenia";
+            this.dataUrodzeniaDataGridViewTextBoxColumn.Name = "dataUrodzeniaDataGridViewTextBoxColumn";
+            this.dataUrodzeniaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // czyKobietaDataGridViewCheckBoxColumn
+            // 
+            this.czyKobietaDataGridViewCheckBoxColumn.DataPropertyName = "CzyKobieta";
+            this.czyKobietaDataGridViewCheckBoxColumn.HeaderText = "CzyKobieta";
+            this.czyKobietaDataGridViewCheckBoxColumn.Name = "czyKobietaDataGridViewCheckBoxColumn";
+            this.czyKobietaDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // peselDataGridViewTextBoxColumn
+            // 
+            this.peselDataGridViewTextBoxColumn.DataPropertyName = "Pesel";
+            this.peselDataGridViewTextBoxColumn.HeaderText = "Pesel";
+            this.peselDataGridViewTextBoxColumn.Name = "peselDataGridViewTextBoxColumn";
+            this.peselDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // plecDataGridViewTextBoxColumn
+            // 
+            this.plecDataGridViewTextBoxColumn.DataPropertyName = "Plec";
+            this.plecDataGridViewTextBoxColumn.HeaderText = "Plec";
+            this.plecDataGridViewTextBoxColumn.Name = "plecDataGridViewTextBoxColumn";
+            this.plecDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(800, 445);
             this.ControlBox = false;
             this.Controls.Add(this.groupBoxSearch);
@@ -248,6 +249,10 @@ namespace ProjektZaliczeniowy_JIPP4
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelSurname;
         private System.Windows.Forms.DataGridView dataGridViewSearch;
+        private System.Windows.Forms.BindingSource osobaBindingSource;
+        private System.Windows.Forms.GroupBox groupBoxSearch;
+        private System.Windows.Forms.ToolTip toolTipTextBox;
+        private System.Windows.Forms.ToolTip toolTipButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imieDataGridViewTextBoxColumn;
@@ -255,9 +260,5 @@ namespace ProjektZaliczeniowy_JIPP4
         private System.Windows.Forms.DataGridViewCheckBoxColumn czyKobietaDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn peselDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn plecDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource osobaBindingSource;
-        private System.Windows.Forms.GroupBox groupBoxSearch;
-        private System.Windows.Forms.ToolTip toolTipTextBox;
-        private System.Windows.Forms.ToolTip toolTipButton;
     }
 }

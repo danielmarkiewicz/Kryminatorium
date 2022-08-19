@@ -71,7 +71,7 @@ namespace ProjektZaliczeniowy_JIPP4
 
             int[] handCrood = new int[2];
 
-            graphics.Clear(Color.White);
+            graphics.Clear(Color.DarkGray);
 
             graphics.DrawEllipse(new Pen(Color.Black, 1f), 0, 0, WIDTH, HEIGHT);
 

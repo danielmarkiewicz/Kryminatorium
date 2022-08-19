@@ -69,5 +69,14 @@ namespace ProjektZaliczeniowy_JIPP4
             addForm = null;
             this.Show();
         }
+
+        private void eclipseEditButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditForm editForm = new EditForm();
+            editForm.ShowDialog();
+            editForm = null;
+            this.Show();
+        }
     }
 }

@@ -11,6 +11,8 @@ namespace ProjektZaliczeniowy_JIPP4
         public string Name { get; set; }
         public string Surname { get; set; }
         public bool Sex { get; set; }
+        public string Pesel { get; set; }
+        public int Id { get; set; }
 
     }
 }
