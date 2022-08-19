@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using ProjektZaliczeniowy_JIPP4.ProjektJIPP4_DanielMarkiewiczDataSetTableAdapters;
 
 namespace ProjektZaliczeniowy_JIPP4
 {

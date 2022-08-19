@@ -35,18 +35,14 @@ namespace ProjektZaliczeniowy_JIPP4
             this.clockDigital = new System.Windows.Forms.Timer(this.components);
             this.lblDayName = new System.Windows.Forms.Label();
             this.panelButton = new System.Windows.Forms.Panel();
+            this.panelTime = new System.Windows.Forms.Panel();
+            this.analogClockBox = new System.Windows.Forms.PictureBox();
+            this.toolTipButton = new System.Windows.Forms.ToolTip(this.components);
             this.eclipseEditButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
             this.eclipseDeleteButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
             this.eclipseButtonExit = new ProjektZaliczeniowy_JIPP4.EclipseButton();
             this.eclipseAddButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
             this.eclipseSearchButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
-            this.panelTime = new System.Windows.Forms.Panel();
-            this.analogClockBox = new System.Windows.Forms.PictureBox();
-            this.toolTipSearchButton = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipAddButton = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipDeleteButton = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipEditButton = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipCloseApp = new System.Windows.Forms.ToolTip(this.components);
             this.panelButton.SuspendLayout();
             this.panelTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.analogClockBox)).BeginInit();
@@ -110,80 +106,6 @@ namespace ProjektZaliczeniowy_JIPP4
             this.panelButton.Size = new System.Drawing.Size(287, 622);
             this.panelButton.TabIndex = 14;
             // 
-            // eclipseEditButton
-            // 
-            this.eclipseEditButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.eclipseEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eclipseEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eclipseEditButton.Location = new System.Drawing.Point(16, 311);
-            this.eclipseEditButton.Margin = new System.Windows.Forms.Padding(4);
-            this.eclipseEditButton.Name = "eclipseEditButton";
-            this.eclipseEditButton.Size = new System.Drawing.Size(252, 90);
-            this.eclipseEditButton.TabIndex = 12;
-            this.eclipseEditButton.Text = "Edytuj";
-            this.toolTipEditButton.SetToolTip(this.eclipseEditButton, "Edytowanie danych w bazie Kartoteka");
-            this.eclipseEditButton.UseVisualStyleBackColor = false;
-            // 
-            // eclipseDeleteButton
-            // 
-            this.eclipseDeleteButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.eclipseDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eclipseDeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eclipseDeleteButton.Location = new System.Drawing.Point(16, 214);
-            this.eclipseDeleteButton.Margin = new System.Windows.Forms.Padding(4);
-            this.eclipseDeleteButton.Name = "eclipseDeleteButton";
-            this.eclipseDeleteButton.Size = new System.Drawing.Size(252, 90);
-            this.eclipseDeleteButton.TabIndex = 11;
-            this.eclipseDeleteButton.Text = "Usuń";
-            this.toolTipDeleteButton.SetToolTip(this.eclipseDeleteButton, "Usuwanie danych w bazie Kartoteka");
-            this.eclipseDeleteButton.UseVisualStyleBackColor = false;
-            // 
-            // eclipseButtonExit
-            // 
-            this.eclipseButtonExit.BackColor = System.Drawing.Color.Red;
-            this.eclipseButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eclipseButtonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eclipseButtonExit.Location = new System.Drawing.Point(16, 519);
-            this.eclipseButtonExit.Margin = new System.Windows.Forms.Padding(4);
-            this.eclipseButtonExit.Name = "eclipseButtonExit";
-            this.eclipseButtonExit.Size = new System.Drawing.Size(252, 90);
-            this.eclipseButtonExit.TabIndex = 13;
-            this.eclipseButtonExit.Text = "Zamknij";
-            this.toolTipCloseApp.SetToolTip(this.eclipseButtonExit, "Zamknięcie aplikacji");
-            this.eclipseButtonExit.UseVisualStyleBackColor = false;
-            this.eclipseButtonExit.Click += new System.EventHandler(this.eclipseButtonExit_Click);
-            // 
-            // eclipseAddButton
-            // 
-            this.eclipseAddButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.eclipseAddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eclipseAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eclipseAddButton.Location = new System.Drawing.Point(16, 117);
-            this.eclipseAddButton.Margin = new System.Windows.Forms.Padding(4);
-            this.eclipseAddButton.Name = "eclipseAddButton";
-            this.eclipseAddButton.Size = new System.Drawing.Size(252, 90);
-            this.eclipseAddButton.TabIndex = 10;
-            this.eclipseAddButton.Text = "Dodaj";
-            this.toolTipAddButton.SetToolTip(this.eclipseAddButton, "Dodawanie nowych danych do bazy Kartoteka");
-            this.eclipseAddButton.UseVisualStyleBackColor = false;
-            this.eclipseAddButton.Click += new System.EventHandler(this.eclipseAddButton_Click);
-            // 
-            // eclipseSearchButton
-            // 
-            this.eclipseSearchButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.eclipseSearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eclipseSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eclipseSearchButton.Location = new System.Drawing.Point(16, 20);
-            this.eclipseSearchButton.Margin = new System.Windows.Forms.Padding(4);
-            this.eclipseSearchButton.Name = "eclipseSearchButton";
-            this.eclipseSearchButton.Size = new System.Drawing.Size(252, 90);
-            this.eclipseSearchButton.TabIndex = 9;
-            this.eclipseSearchButton.Text = "Wyszukaj";
-            this.eclipseSearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.toolTipSearchButton.SetToolTip(this.eclipseSearchButton, "Wyszukiwanie w bazie danych Kartoteka");
-            this.eclipseSearchButton.UseVisualStyleBackColor = false;
-            this.eclipseSearchButton.Click += new System.EventHandler(this.eclipseSearchButton_Click);
-            // 
             // panelTime
             // 
             this.panelTime.Controls.Add(this.analogClockBox);
@@ -206,6 +128,80 @@ namespace ProjektZaliczeniowy_JIPP4
             this.analogClockBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.analogClockBox.TabIndex = 9;
             this.analogClockBox.TabStop = false;
+            // 
+            // eclipseEditButton
+            // 
+            this.eclipseEditButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.eclipseEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eclipseEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eclipseEditButton.Location = new System.Drawing.Point(16, 311);
+            this.eclipseEditButton.Margin = new System.Windows.Forms.Padding(4);
+            this.eclipseEditButton.Name = "eclipseEditButton";
+            this.eclipseEditButton.Size = new System.Drawing.Size(252, 90);
+            this.eclipseEditButton.TabIndex = 12;
+            this.eclipseEditButton.Text = "Edytuj";
+            this.toolTipButton.SetToolTip(this.eclipseEditButton, "Edytowanie danych w bazie Kartoteka");
+            this.eclipseEditButton.UseVisualStyleBackColor = false;
+            // 
+            // eclipseDeleteButton
+            // 
+            this.eclipseDeleteButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.eclipseDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eclipseDeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eclipseDeleteButton.Location = new System.Drawing.Point(16, 214);
+            this.eclipseDeleteButton.Margin = new System.Windows.Forms.Padding(4);
+            this.eclipseDeleteButton.Name = "eclipseDeleteButton";
+            this.eclipseDeleteButton.Size = new System.Drawing.Size(252, 90);
+            this.eclipseDeleteButton.TabIndex = 11;
+            this.eclipseDeleteButton.Text = "Usuń";
+            this.toolTipButton.SetToolTip(this.eclipseDeleteButton, "Usuwanie danych z bazy Kartoteka");
+            this.eclipseDeleteButton.UseVisualStyleBackColor = false;
+            // 
+            // eclipseButtonExit
+            // 
+            this.eclipseButtonExit.BackColor = System.Drawing.Color.Red;
+            this.eclipseButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eclipseButtonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eclipseButtonExit.Location = new System.Drawing.Point(16, 519);
+            this.eclipseButtonExit.Margin = new System.Windows.Forms.Padding(4);
+            this.eclipseButtonExit.Name = "eclipseButtonExit";
+            this.eclipseButtonExit.Size = new System.Drawing.Size(252, 90);
+            this.eclipseButtonExit.TabIndex = 13;
+            this.eclipseButtonExit.Text = "Zamknij";
+            this.toolTipButton.SetToolTip(this.eclipseButtonExit, "Wyłączenie aplikacji Kartoteka");
+            this.eclipseButtonExit.UseVisualStyleBackColor = false;
+            this.eclipseButtonExit.Click += new System.EventHandler(this.eclipseButtonExit_Click);
+            // 
+            // eclipseAddButton
+            // 
+            this.eclipseAddButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.eclipseAddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eclipseAddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eclipseAddButton.Location = new System.Drawing.Point(16, 117);
+            this.eclipseAddButton.Margin = new System.Windows.Forms.Padding(4);
+            this.eclipseAddButton.Name = "eclipseAddButton";
+            this.eclipseAddButton.Size = new System.Drawing.Size(252, 90);
+            this.eclipseAddButton.TabIndex = 10;
+            this.eclipseAddButton.Text = "Dodaj";
+            this.toolTipButton.SetToolTip(this.eclipseAddButton, "Dodawanie nowych danych do bazy Kartoteka");
+            this.eclipseAddButton.UseVisualStyleBackColor = false;
+            this.eclipseAddButton.Click += new System.EventHandler(this.eclipseAddButton_Click);
+            // 
+            // eclipseSearchButton
+            // 
+            this.eclipseSearchButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.eclipseSearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eclipseSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eclipseSearchButton.Location = new System.Drawing.Point(16, 20);
+            this.eclipseSearchButton.Margin = new System.Windows.Forms.Padding(4);
+            this.eclipseSearchButton.Name = "eclipseSearchButton";
+            this.eclipseSearchButton.Size = new System.Drawing.Size(252, 90);
+            this.eclipseSearchButton.TabIndex = 9;
+            this.eclipseSearchButton.Text = "Wyszukaj";
+            this.eclipseSearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTipButton.SetToolTip(this.eclipseSearchButton, "Wyszukiwanie w bazie danych Kartoteka");
+            this.eclipseSearchButton.UseVisualStyleBackColor = false;
+            this.eclipseSearchButton.Click += new System.EventHandler(this.eclipseSearchButton_Click);
             // 
             // MainFormKartoteka
             // 
@@ -245,11 +241,7 @@ namespace ProjektZaliczeniowy_JIPP4
         private System.Windows.Forms.Panel panelButton;
         private System.Windows.Forms.Panel panelTime;
         private System.Windows.Forms.PictureBox analogClockBox;
-        private System.Windows.Forms.ToolTip toolTipSearchButton;
-        private System.Windows.Forms.ToolTip toolTipAddButton;
-        private System.Windows.Forms.ToolTip toolTipDeleteButton;
-        private System.Windows.Forms.ToolTip toolTipEditButton;
-        private System.Windows.Forms.ToolTip toolTipCloseApp;
+        private System.Windows.Forms.ToolTip toolTipButton;
     }
 }
 

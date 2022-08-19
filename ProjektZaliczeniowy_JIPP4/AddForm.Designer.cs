@@ -55,6 +55,9 @@ namespace ProjektZaliczeniowy_JIPP4
             this.osobaTableAdapter = new ProjektZaliczeniowy_JIPP4.ProjektJIPP4_DanielMarkiewiczDataSetTableAdapters.OsobaTableAdapter();
             this.eclipseButtonSaveChanges = new ProjektZaliczeniowy_JIPP4.EclipseButton();
             this.eclipseButtonSearchFormExit = new ProjektZaliczeniowy_JIPP4.EclipseButton();
+            this.toolTipTextBox = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipSex = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipButton = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.osobaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektJIPP4_DanielMarkiewiczDataSet)).BeginInit();
@@ -172,6 +175,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.ManSexRadioButton.TabIndex = 32;
             this.ManSexRadioButton.TabStop = true;
             this.ManSexRadioButton.Text = "Mężczyzna";
+            this.toolTipSex.SetToolTip(this.ManSexRadioButton, "Zaznacz płeć dodawanej osoby");
             this.ManSexRadioButton.UseVisualStyleBackColor = true;
             this.ManSexRadioButton.CheckedChanged += new System.EventHandler(this.ManSexRadioButton_CheckedChanged);
             // 
@@ -184,6 +188,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.WomanSexRadioButton.TabIndex = 31;
             this.WomanSexRadioButton.TabStop = true;
             this.WomanSexRadioButton.Text = "Kobieta";
+            this.toolTipSex.SetToolTip(this.WomanSexRadioButton, "Zaznacz płeć dodawanej osoby");
             this.WomanSexRadioButton.UseVisualStyleBackColor = true;
             this.WomanSexRadioButton.CheckedChanged += new System.EventHandler(this.WomanSexRadioButton_CheckedChanged);
             // 
@@ -211,6 +216,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.textBoxPESEL.Name = "textBoxPESEL";
             this.textBoxPESEL.Size = new System.Drawing.Size(482, 20);
             this.textBoxPESEL.TabIndex = 28;
+            this.toolTipTextBox.SetToolTip(this.textBoxPESEL, "Wpisz numer PESEL osoby, którą chcesz dodać");
             // 
             // textBoxDateOfBirth
             // 
@@ -218,6 +224,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.textBoxDateOfBirth.Name = "textBoxDateOfBirth";
             this.textBoxDateOfBirth.Size = new System.Drawing.Size(482, 20);
             this.textBoxDateOfBirth.TabIndex = 27;
+            this.toolTipTextBox.SetToolTip(this.textBoxDateOfBirth, "Wpisz datę urodzenia osoby (format: DD.MM.RRRR)");
             // 
             // labelSurname
             // 
@@ -243,6 +250,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.Size = new System.Drawing.Size(482, 20);
             this.textBoxSurname.TabIndex = 24;
+            this.toolTipTextBox.SetToolTip(this.textBoxSurname, "Wpisz nazwisko osoby, którą chcesz dodać");
             // 
             // textBoxName
             // 
@@ -250,6 +258,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(482, 20);
             this.textBoxName.TabIndex = 23;
+            this.toolTipTextBox.SetToolTip(this.textBoxName, "Wpisz imię osoby, którą chcesz dodać");
             // 
             // projektJIPP4DanielMarkiewiczDataSetBindingSource
             // 
@@ -271,6 +280,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.eclipseButtonSaveChanges.Size = new System.Drawing.Size(252, 90);
             this.eclipseButtonSaveChanges.TabIndex = 20;
             this.eclipseButtonSaveChanges.Text = "Zapisz zmiany";
+            this.toolTipButton.SetToolTip(this.eclipseButtonSaveChanges, "W celu zapisania danych wybierz tą opcję");
             this.eclipseButtonSaveChanges.UseVisualStyleBackColor = false;
             this.eclipseButtonSaveChanges.Click += new System.EventHandler(this.eclipseButtonSaveChanges_Click);
             // 
@@ -284,9 +294,22 @@ namespace ProjektZaliczeniowy_JIPP4
             this.eclipseButtonSearchFormExit.Name = "eclipseButtonSearchFormExit";
             this.eclipseButtonSearchFormExit.Size = new System.Drawing.Size(252, 90);
             this.eclipseButtonSearchFormExit.TabIndex = 19;
-            this.eclipseButtonSearchFormExit.Text = "Zakończ wyszukiwanie";
+            this.eclipseButtonSearchFormExit.Text = "Zakończ dodawanie";
+            this.toolTipButton.SetToolTip(this.eclipseButtonSearchFormExit, "Aby zakończyć wybierz tą opcję");
             this.eclipseButtonSearchFormExit.UseVisualStyleBackColor = false;
             this.eclipseButtonSearchFormExit.Click += new System.EventHandler(this.eclipseButtonSearchFormExit_Click);
+            // 
+            // toolTipTextBox
+            // 
+            this.toolTipTextBox.AutomaticDelay = 100;
+            // 
+            // toolTipSex
+            // 
+            this.toolTipSex.AutomaticDelay = 100;
+            // 
+            // toolTipButton
+            // 
+            this.toolTipButton.AutomaticDelay = 100;
             // 
             // AddForm
             // 
@@ -342,5 +365,8 @@ namespace ProjektZaliczeniowy_JIPP4
         private System.Windows.Forms.TextBox textBoxName;
         private EclipseButton eclipseButtonSearchFormExit;
         private EclipseButton eclipseButtonSaveChanges;
+        private System.Windows.Forms.ToolTip toolTipSex;
+        private System.Windows.Forms.ToolTip toolTipTextBox;
+        private System.Windows.Forms.ToolTip toolTipButton;
     }
 }

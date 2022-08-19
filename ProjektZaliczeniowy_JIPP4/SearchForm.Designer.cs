@@ -34,7 +34,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.textBoxSurname = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.labelSurname = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewSearch = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,9 @@ namespace ProjektZaliczeniowy_JIPP4
             this.osobaTableAdapter = new ProjektZaliczeniowy_JIPP4.ProjektJIPP4_DanielMarkiewiczDataSetTableAdapters.OsobaTableAdapter();
             this.eclipseButtonSearchFormExit = new ProjektZaliczeniowy_JIPP4.EclipseButton();
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.toolTipButton = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipTextBox = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.osobaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektJIPP4_DanielMarkiewiczDataSet)).BeginInit();
             this.groupBoxSearch.SuspendLayout();
@@ -59,6 +61,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(487, 20);
             this.textBoxName.TabIndex = 16;
+            this.toolTipTextBox.SetToolTip(this.textBoxName, "Wpisz imię wyszukiwanej osoby");
             this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // textBoxSurname
@@ -67,6 +70,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.Size = new System.Drawing.Size(487, 20);
             this.textBoxSurname.TabIndex = 17;
+            this.toolTipTextBox.SetToolTip(this.textBoxSurname, "Wpisz nazwisko wyszukiwanej osoby");
             this.textBoxSurname.TextChanged += new System.EventHandler(this.textBoxSurname_TextChanged);
             // 
             // labelName
@@ -87,14 +91,14 @@ namespace ProjektZaliczeniowy_JIPP4
             this.labelSurname.TabIndex = 22;
             this.labelSurname.Text = "Wpisz Nazwisko";
             // 
-            // dataGridView1
+            // dataGridViewSearch
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewSearch.AllowUserToAddRows = false;
+            this.dataGridViewSearch.AllowUserToDeleteRows = false;
+            this.dataGridViewSearch.AutoGenerateColumns = false;
+            this.dataGridViewSearch.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nazwiskoDataGridViewTextBoxColumn,
             this.imieDataGridViewTextBoxColumn,
@@ -102,12 +106,12 @@ namespace ProjektZaliczeniowy_JIPP4
             this.czyKobietaDataGridViewCheckBoxColumn,
             this.peselDataGridViewTextBoxColumn,
             this.plecDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.osobaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 309);
-            this.dataGridView1.TabIndex = 24;
+            this.dataGridViewSearch.DataSource = this.osobaBindingSource;
+            this.dataGridViewSearch.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewSearch.Name = "dataGridViewSearch";
+            this.dataGridViewSearch.ReadOnly = true;
+            this.dataGridViewSearch.Size = new System.Drawing.Size(776, 309);
+            this.dataGridViewSearch.TabIndex = 24;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -183,6 +187,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.eclipseButtonSearchFormExit.Size = new System.Drawing.Size(252, 90);
             this.eclipseButtonSearchFormExit.TabIndex = 18;
             this.eclipseButtonSearchFormExit.Text = "Zakończ wyszukiwanie";
+            this.toolTipButton.SetToolTip(this.eclipseButtonSearchFormExit, "Jeżeli chcesz zakończyć wyszukiwanie wybierz tą opcję");
             this.eclipseButtonSearchFormExit.UseVisualStyleBackColor = false;
             this.eclipseButtonSearchFormExit.Click += new System.EventHandler(this.eclipseButtonSearchFormExit_Click);
             // 
@@ -200,6 +205,14 @@ namespace ProjektZaliczeniowy_JIPP4
             this.groupBoxSearch.TabStop = false;
             this.groupBoxSearch.Text = "Wyszukiwanie";
             // 
+            // toolTipButton
+            // 
+            this.toolTipButton.AutomaticDelay = 100;
+            // 
+            // toolTipTextBox
+            // 
+            this.toolTipTextBox.AutomaticDelay = 100;
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,7 +221,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.ClientSize = new System.Drawing.Size(800, 445);
             this.ControlBox = false;
             this.Controls.Add(this.groupBoxSearch);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewSearch);
             this.Controls.Add(this.eclipseButtonSearchFormExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -217,7 +230,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "SearchForm";
             this.Load += new System.EventHandler(this.SearchForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.osobaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektJIPP4_DanielMarkiewiczDataSet)).EndInit();
             this.groupBoxSearch.ResumeLayout(false);
@@ -234,7 +247,7 @@ namespace ProjektZaliczeniowy_JIPP4
         private ProjektJIPP4_DanielMarkiewiczDataSetTableAdapters.OsobaTableAdapter osobaTableAdapter;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelSurname;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imieDataGridViewTextBoxColumn;
@@ -244,5 +257,7 @@ namespace ProjektZaliczeniowy_JIPP4
         private System.Windows.Forms.DataGridViewTextBoxColumn plecDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource osobaBindingSource;
         private System.Windows.Forms.GroupBox groupBoxSearch;
+        private System.Windows.Forms.ToolTip toolTipTextBox;
+        private System.Windows.Forms.ToolTip toolTipButton;
     }
 }
