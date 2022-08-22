@@ -31,6 +31,13 @@ namespace ProjektZaliczeniowy_JIPP4
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataUrodzeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.czyKobietaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.peselDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.osobaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projektJIPP4_DanielMarkiewiczDataSet = new ProjektZaliczeniowy_JIPP4.ProjektJIPP4_DanielMarkiewiczDataSet();
             this.groupBoxAdd = new System.Windows.Forms.GroupBox();
@@ -47,17 +54,10 @@ namespace ProjektZaliczeniowy_JIPP4
             this.projektJIPP4DanielMarkiewiczDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.osobaTableAdapter = new ProjektZaliczeniowy_JIPP4.ProjektJIPP4_DanielMarkiewiczDataSetTableAdapters.OsobaTableAdapter();
             this.eclipseButtonSaveChanges = new ProjektZaliczeniowy_JIPP4.EclipseButton();
-            this.eclipseButtonSearchFormExit = new ProjektZaliczeniowy_JIPP4.EclipseButton();
+            this.eclipseButtonAddFormExit = new ProjektZaliczeniowy_JIPP4.EclipseButton();
             this.toolTipTextBox = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipSex = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipButton = new System.Windows.Forms.ToolTip(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataUrodzeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.czyKobietaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.peselDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.osobaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektJIPP4_DanielMarkiewiczDataSet)).BeginInit();
@@ -86,6 +86,56 @@ namespace ProjektZaliczeniowy_JIPP4
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(789, 237);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nazwiskoDataGridViewTextBoxColumn
+            // 
+            this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko";
+            this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
+            this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
+            this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imieDataGridViewTextBoxColumn
+            // 
+            this.imieDataGridViewTextBoxColumn.DataPropertyName = "Imie";
+            this.imieDataGridViewTextBoxColumn.HeaderText = "Imie";
+            this.imieDataGridViewTextBoxColumn.Name = "imieDataGridViewTextBoxColumn";
+            this.imieDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataUrodzeniaDataGridViewTextBoxColumn
+            // 
+            this.dataUrodzeniaDataGridViewTextBoxColumn.DataPropertyName = "DataUrodzenia";
+            this.dataUrodzeniaDataGridViewTextBoxColumn.HeaderText = "DataUrodzenia";
+            this.dataUrodzeniaDataGridViewTextBoxColumn.Name = "dataUrodzeniaDataGridViewTextBoxColumn";
+            this.dataUrodzeniaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // czyKobietaDataGridViewCheckBoxColumn
+            // 
+            this.czyKobietaDataGridViewCheckBoxColumn.DataPropertyName = "CzyKobieta";
+            this.czyKobietaDataGridViewCheckBoxColumn.HeaderText = "CzyKobieta";
+            this.czyKobietaDataGridViewCheckBoxColumn.Name = "czyKobietaDataGridViewCheckBoxColumn";
+            this.czyKobietaDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // peselDataGridViewTextBoxColumn
+            // 
+            this.peselDataGridViewTextBoxColumn.DataPropertyName = "Pesel";
+            this.peselDataGridViewTextBoxColumn.HeaderText = "Pesel";
+            this.peselDataGridViewTextBoxColumn.Name = "peselDataGridViewTextBoxColumn";
+            this.peselDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // plecDataGridViewTextBoxColumn
+            // 
+            this.plecDataGridViewTextBoxColumn.DataPropertyName = "Plec";
+            this.plecDataGridViewTextBoxColumn.HeaderText = "Plec";
+            this.plecDataGridViewTextBoxColumn.Name = "plecDataGridViewTextBoxColumn";
+            this.plecDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // osobaBindingSource
             // 
@@ -235,20 +285,20 @@ namespace ProjektZaliczeniowy_JIPP4
             this.eclipseButtonSaveChanges.UseVisualStyleBackColor = false;
             this.eclipseButtonSaveChanges.Click += new System.EventHandler(this.eclipseButtonSaveChanges_Click);
             // 
-            // eclipseButtonSearchFormExit
+            // eclipseButtonAddFormExit
             // 
-            this.eclipseButtonSearchFormExit.BackColor = System.Drawing.Color.Red;
-            this.eclipseButtonSearchFormExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eclipseButtonSearchFormExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eclipseButtonSearchFormExit.Location = new System.Drawing.Point(549, 374);
-            this.eclipseButtonSearchFormExit.Margin = new System.Windows.Forms.Padding(4);
-            this.eclipseButtonSearchFormExit.Name = "eclipseButtonSearchFormExit";
-            this.eclipseButtonSearchFormExit.Size = new System.Drawing.Size(252, 90);
-            this.eclipseButtonSearchFormExit.TabIndex = 19;
-            this.eclipseButtonSearchFormExit.Text = "Zakończ dodawanie";
-            this.toolTipButton.SetToolTip(this.eclipseButtonSearchFormExit, "Aby zakończyć wybierz tą opcję");
-            this.eclipseButtonSearchFormExit.UseVisualStyleBackColor = false;
-            this.eclipseButtonSearchFormExit.Click += new System.EventHandler(this.eclipseButtonSearchFormExit_Click);
+            this.eclipseButtonAddFormExit.BackColor = System.Drawing.Color.Red;
+            this.eclipseButtonAddFormExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eclipseButtonAddFormExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eclipseButtonAddFormExit.Location = new System.Drawing.Point(549, 374);
+            this.eclipseButtonAddFormExit.Margin = new System.Windows.Forms.Padding(4);
+            this.eclipseButtonAddFormExit.Name = "eclipseButtonAddFormExit";
+            this.eclipseButtonAddFormExit.Size = new System.Drawing.Size(252, 90);
+            this.eclipseButtonAddFormExit.TabIndex = 19;
+            this.eclipseButtonAddFormExit.Text = "Zakończ dodawanie";
+            this.toolTipButton.SetToolTip(this.eclipseButtonAddFormExit, "Aby zakończyć wybierz tą opcję");
+            this.eclipseButtonAddFormExit.UseVisualStyleBackColor = false;
+            this.eclipseButtonAddFormExit.Click += new System.EventHandler(this.eclipseButtonSearchFormExit_Click);
             // 
             // toolTipTextBox
             // 
@@ -262,56 +312,6 @@ namespace ProjektZaliczeniowy_JIPP4
             // 
             this.toolTipButton.AutomaticDelay = 100;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nazwiskoDataGridViewTextBoxColumn
-            // 
-            this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko";
-            this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
-            this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
-            this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imieDataGridViewTextBoxColumn
-            // 
-            this.imieDataGridViewTextBoxColumn.DataPropertyName = "Imie";
-            this.imieDataGridViewTextBoxColumn.HeaderText = "Imie";
-            this.imieDataGridViewTextBoxColumn.Name = "imieDataGridViewTextBoxColumn";
-            this.imieDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataUrodzeniaDataGridViewTextBoxColumn
-            // 
-            this.dataUrodzeniaDataGridViewTextBoxColumn.DataPropertyName = "DataUrodzenia";
-            this.dataUrodzeniaDataGridViewTextBoxColumn.HeaderText = "DataUrodzenia";
-            this.dataUrodzeniaDataGridViewTextBoxColumn.Name = "dataUrodzeniaDataGridViewTextBoxColumn";
-            this.dataUrodzeniaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // czyKobietaDataGridViewCheckBoxColumn
-            // 
-            this.czyKobietaDataGridViewCheckBoxColumn.DataPropertyName = "CzyKobieta";
-            this.czyKobietaDataGridViewCheckBoxColumn.HeaderText = "CzyKobieta";
-            this.czyKobietaDataGridViewCheckBoxColumn.Name = "czyKobietaDataGridViewCheckBoxColumn";
-            this.czyKobietaDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // peselDataGridViewTextBoxColumn
-            // 
-            this.peselDataGridViewTextBoxColumn.DataPropertyName = "Pesel";
-            this.peselDataGridViewTextBoxColumn.HeaderText = "Pesel";
-            this.peselDataGridViewTextBoxColumn.Name = "peselDataGridViewTextBoxColumn";
-            this.peselDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // plecDataGridViewTextBoxColumn
-            // 
-            this.plecDataGridViewTextBoxColumn.DataPropertyName = "Plec";
-            this.plecDataGridViewTextBoxColumn.HeaderText = "Plec";
-            this.plecDataGridViewTextBoxColumn.Name = "plecDataGridViewTextBoxColumn";
-            this.plecDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // AddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,7 +320,7 @@ namespace ProjektZaliczeniowy_JIPP4
             this.ClientSize = new System.Drawing.Size(813, 488);
             this.ControlBox = false;
             this.Controls.Add(this.eclipseButtonSaveChanges);
-            this.Controls.Add(this.eclipseButtonSearchFormExit);
+            this.Controls.Add(this.eclipseButtonAddFormExit);
             this.Controls.Add(this.groupBoxAdd);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -357,7 +357,7 @@ namespace ProjektZaliczeniowy_JIPP4
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxSurname;
         private System.Windows.Forms.TextBox textBoxName;
-        private EclipseButton eclipseButtonSearchFormExit;
+        private EclipseButton eclipseButtonAddFormExit;
         private EclipseButton eclipseButtonSaveChanges;
         private System.Windows.Forms.ToolTip toolTipSex;
         private System.Windows.Forms.ToolTip toolTipTextBox;

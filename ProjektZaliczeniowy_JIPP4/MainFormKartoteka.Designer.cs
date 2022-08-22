@@ -35,14 +35,13 @@ namespace ProjektZaliczeniowy_JIPP4
             this.clockDigital = new System.Windows.Forms.Timer(this.components);
             this.lblDayName = new System.Windows.Forms.Label();
             this.panelButton = new System.Windows.Forms.Panel();
-            this.panelTime = new System.Windows.Forms.Panel();
-            this.analogClockBox = new System.Windows.Forms.PictureBox();
-            this.toolTipButton = new System.Windows.Forms.ToolTip(this.components);
             this.eclipseEditButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
-            this.eclipseDeleteButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
             this.eclipseButtonExit = new ProjektZaliczeniowy_JIPP4.EclipseButton();
             this.eclipseAddButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
             this.eclipseSearchButton = new ProjektZaliczeniowy_JIPP4.EclipseButton();
+            this.panelTime = new System.Windows.Forms.Panel();
+            this.analogClockBox = new System.Windows.Forms.PictureBox();
+            this.toolTipButton = new System.Windows.Forms.ToolTip(this.components);
             this.panelButton.SuspendLayout();
             this.panelTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.analogClockBox)).BeginInit();
@@ -95,7 +94,6 @@ namespace ProjektZaliczeniowy_JIPP4
             // panelButton
             // 
             this.panelButton.Controls.Add(this.eclipseEditButton);
-            this.panelButton.Controls.Add(this.eclipseDeleteButton);
             this.panelButton.Controls.Add(this.eclipseButtonExit);
             this.panelButton.Controls.Add(this.eclipseAddButton);
             this.panelButton.Controls.Add(this.eclipseSearchButton);
@@ -103,38 +101,15 @@ namespace ProjektZaliczeniowy_JIPP4
             this.panelButton.Location = new System.Drawing.Point(0, 0);
             this.panelButton.Margin = new System.Windows.Forms.Padding(4);
             this.panelButton.Name = "panelButton";
-            this.panelButton.Size = new System.Drawing.Size(287, 622);
+            this.panelButton.Size = new System.Drawing.Size(287, 468);
             this.panelButton.TabIndex = 14;
-            // 
-            // panelTime
-            // 
-            this.panelTime.Controls.Add(this.analogClockBox);
-            this.panelTime.Controls.Add(this.lblDayName);
-            this.panelTime.Controls.Add(this.lblDate);
-            this.panelTime.Controls.Add(this.lblTime);
-            this.panelTime.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelTime.Location = new System.Drawing.Point(287, 0);
-            this.panelTime.Margin = new System.Windows.Forms.Padding(4);
-            this.panelTime.Name = "panelTime";
-            this.panelTime.Size = new System.Drawing.Size(317, 622);
-            this.panelTime.TabIndex = 15;
-            // 
-            // analogClockBox
-            // 
-            this.analogClockBox.Location = new System.Drawing.Point(16, 15);
-            this.analogClockBox.Margin = new System.Windows.Forms.Padding(4);
-            this.analogClockBox.Name = "analogClockBox";
-            this.analogClockBox.Size = new System.Drawing.Size(285, 244);
-            this.analogClockBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.analogClockBox.TabIndex = 9;
-            this.analogClockBox.TabStop = false;
             // 
             // eclipseEditButton
             // 
             this.eclipseEditButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.eclipseEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eclipseEditButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eclipseEditButton.Location = new System.Drawing.Point(16, 311);
+            this.eclipseEditButton.Location = new System.Drawing.Point(16, 215);
             this.eclipseEditButton.Margin = new System.Windows.Forms.Padding(4);
             this.eclipseEditButton.Name = "eclipseEditButton";
             this.eclipseEditButton.Size = new System.Drawing.Size(252, 90);
@@ -144,26 +119,12 @@ namespace ProjektZaliczeniowy_JIPP4
             this.eclipseEditButton.UseVisualStyleBackColor = false;
             this.eclipseEditButton.Click += new System.EventHandler(this.eclipseEditButton_Click);
             // 
-            // eclipseDeleteButton
-            // 
-            this.eclipseDeleteButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.eclipseDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eclipseDeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eclipseDeleteButton.Location = new System.Drawing.Point(16, 214);
-            this.eclipseDeleteButton.Margin = new System.Windows.Forms.Padding(4);
-            this.eclipseDeleteButton.Name = "eclipseDeleteButton";
-            this.eclipseDeleteButton.Size = new System.Drawing.Size(252, 90);
-            this.eclipseDeleteButton.TabIndex = 11;
-            this.eclipseDeleteButton.Text = "Usuń";
-            this.toolTipButton.SetToolTip(this.eclipseDeleteButton, "Usuwanie danych z bazy Kartoteka");
-            this.eclipseDeleteButton.UseVisualStyleBackColor = false;
-            // 
             // eclipseButtonExit
             // 
             this.eclipseButtonExit.BackColor = System.Drawing.Color.Red;
             this.eclipseButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eclipseButtonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eclipseButtonExit.Location = new System.Drawing.Point(16, 519);
+            this.eclipseButtonExit.Location = new System.Drawing.Point(13, 351);
             this.eclipseButtonExit.Margin = new System.Windows.Forms.Padding(4);
             this.eclipseButtonExit.Name = "eclipseButtonExit";
             this.eclipseButtonExit.Size = new System.Drawing.Size(252, 90);
@@ -204,11 +165,34 @@ namespace ProjektZaliczeniowy_JIPP4
             this.eclipseSearchButton.UseVisualStyleBackColor = false;
             this.eclipseSearchButton.Click += new System.EventHandler(this.eclipseSearchButton_Click);
             // 
+            // panelTime
+            // 
+            this.panelTime.Controls.Add(this.analogClockBox);
+            this.panelTime.Controls.Add(this.lblDayName);
+            this.panelTime.Controls.Add(this.lblDate);
+            this.panelTime.Controls.Add(this.lblTime);
+            this.panelTime.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelTime.Location = new System.Drawing.Point(287, 0);
+            this.panelTime.Margin = new System.Windows.Forms.Padding(4);
+            this.panelTime.Name = "panelTime";
+            this.panelTime.Size = new System.Drawing.Size(317, 468);
+            this.panelTime.TabIndex = 15;
+            // 
+            // analogClockBox
+            // 
+            this.analogClockBox.Location = new System.Drawing.Point(16, 15);
+            this.analogClockBox.Margin = new System.Windows.Forms.Padding(4);
+            this.analogClockBox.Name = "analogClockBox";
+            this.analogClockBox.Size = new System.Drawing.Size(285, 244);
+            this.analogClockBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.analogClockBox.TabIndex = 9;
+            this.analogClockBox.TabStop = false;
+            // 
             // MainFormKartoteka
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(604, 622);
+            this.ClientSize = new System.Drawing.Size(604, 468);
             this.ControlBox = false;
             this.Controls.Add(this.panelTime);
             this.Controls.Add(this.panelButton);
@@ -236,7 +220,6 @@ namespace ProjektZaliczeniowy_JIPP4
         private System.Windows.Forms.Label lblDayName;
         private EclipseButton eclipseSearchButton;
         private EclipseButton eclipseAddButton;
-        private EclipseButton eclipseDeleteButton;
         private EclipseButton eclipseEditButton;
         private EclipseButton eclipseButtonExit;
         private System.Windows.Forms.Panel panelButton;

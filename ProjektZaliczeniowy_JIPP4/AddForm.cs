@@ -6,7 +6,7 @@ namespace ProjektZaliczeniowy_JIPP4
 {
     public partial class AddForm : Form
     {
-        
+
         private Person person = new Person();
 
         public AddForm()
@@ -46,30 +46,36 @@ namespace ProjektZaliczeniowy_JIPP4
             person.Name = textBoxName.Text;
             person.Surname = textBoxSurname.Text;
 
-            if(textBoxName.Text == "" || textBoxSurname.Text == "" || textBoxDateOfBirth.Text == "" || textBoxPESEL.Text == "")
+            if (MessageBox.Show("Czy dane się zgadzają?", "Potwierdzenie danych", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show("Uzupełnij pozostałe dane", "Weryfikacja danych", MessageBoxButtons.OK);
-            }
-            else
-            {
-                osobaTableAdapter.Insert(textBoxSurname.Text, textBoxName.Text, textBoxDateOfBirth.Text, person.Sex,
-                    textBoxPESEL.Text);
-                MessageBox.Show($"Pomyślnie dodano osobę do bazy danych {person.Name} {person.Surname}",
-                    "Potwierdzenie dodania", MessageBoxButtons.OK);
-                this.osobaTableAdapter.FillByIdADD(this.projektJIPP4_DanielMarkiewiczDataSet.Osoba);
 
-                foreach (TextBox textBox in this.groupBoxAdd.Controls.OfType<TextBox>())
+                if (textBoxName.Text == "" || textBoxSurname.Text == "" || textBoxDateOfBirth.Text == "" ||
+                    textBoxPESEL.Text == "")
                 {
-                    textBox.Text = null;
-                }
-
-                if (WomanSexRadioButton.Checked && person.Sex)
-                {
-                    WomanSexRadioButton.Checked = false;
+                    MessageBox.Show("Uzupełnij pozostałe dane", "Weryfikacja danych", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    ManSexRadioButton.Checked = false;
+                    osobaTableAdapter.Insert(textBoxSurname.Text, textBoxName.Text, textBoxDateOfBirth.Text, person.Sex,
+                        textBoxPESEL.Text);
+                    MessageBox.Show($"Pomyślnie dodano osobę do bazy danych {person.Name} {person.Surname}",
+                        "Potwierdzenie dodania", MessageBoxButtons.OK);
+                    this.osobaTableAdapter.FillByIdADD(this.projektJIPP4_DanielMarkiewiczDataSet.Osoba);
+
+                    foreach (TextBox textBox in this.groupBoxAdd.Controls.OfType<TextBox>())
+                    {
+                        textBox.Text = null;
+                    }
+
+                    if (WomanSexRadioButton.Checked && person.Sex)
+                    {
+                        WomanSexRadioButton.Checked = false;
+                    }
+                    else
+                    {
+                        ManSexRadioButton.Checked = false;
+                    }
                 }
             }
         }

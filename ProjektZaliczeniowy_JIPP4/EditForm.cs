@@ -38,14 +38,14 @@ namespace ProjektZaliczeniowy_JIPP4
         private void eclipseButtonSaveChanges_Click(object sender, EventArgs e)
         {
             person.Id = Convert.ToInt32(textBoxID.Text);
-
-            osobaBindingSource.EndEdit();
-            osobaTableAdapter.Update(projektJIPP4_DanielMarkiewiczDataSet);
-
+            
             if (MessageBox.Show("Czy napewo dokonać edycji danych tej osoby?", "Potwierdzenie", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show($"Pomyślnie zmieniono dane osoby o ID: {person.Id}",
-                    "Potwierdzenie edycji", MessageBoxButtons.OK);
+                osobaBindingSource.EndEdit();
+                osobaTableAdapter.Update(projektJIPP4_DanielMarkiewiczDataSet);
+
+                MessageBox.Show($"Pomyślnie zmieniono dane osoby o ID: {person.Id}", "Potwierdzenie edycji", MessageBoxButtons.OK);
+
                 this.osobaTableAdapter.FillByID(this.projektJIPP4_DanielMarkiewiczDataSet.Osoba, person.Id);
 
                 if (MessageBox.Show("Czy nowe dane w bazie danych się zgadzają?", "Potwierdzenie", MessageBoxButtons.YesNo,
@@ -72,7 +72,6 @@ namespace ProjektZaliczeniowy_JIPP4
                 {
                     ManSexRadioButton.Checked = false;
                 }
-
                 
             }
         }
