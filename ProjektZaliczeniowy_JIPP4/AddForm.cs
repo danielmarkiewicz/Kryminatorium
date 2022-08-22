@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Data.OleDb;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ProjektZaliczeniowy_JIPP4
@@ -18,7 +20,6 @@ namespace ProjektZaliczeniowy_JIPP4
         {
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'projektJIPP4_DanielMarkiewiczDataSet.Osoba' . Możesz go przenieść lub usunąć.
             this.osobaTableAdapter.Fill(this.projektJIPP4_DanielMarkiewiczDataSet.Osoba);
-
         }
 
         private void eclipseButtonSearchFormExit_Click(object sender, EventArgs e)
@@ -53,7 +54,7 @@ namespace ProjektZaliczeniowy_JIPP4
                 if (textBoxName.Text == "" || textBoxSurname.Text == "" || textBoxDateOfBirth.Text == "" ||
                     textBoxPESEL.Text == "")
                 {
-                    MessageBox.Show("Uzupełnij pozostałe dane", "Weryfikacja danych", MessageBoxButtons.OK);
+                    MessageBox.Show("Nie można przesłać pustego formularza", "Weryfikacja danych", MessageBoxButtons.OK);
                 }
                 else
                 {

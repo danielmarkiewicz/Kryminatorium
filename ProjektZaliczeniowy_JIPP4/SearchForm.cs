@@ -17,6 +17,7 @@ namespace ProjektZaliczeniowy_JIPP4
             {
                 this.Close();
             }
+            
         }
         private void SearchForm_Load(object sender, EventArgs e)
         {

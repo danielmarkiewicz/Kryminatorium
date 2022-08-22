@@ -38,42 +38,50 @@ namespace ProjektZaliczeniowy_JIPP4
         private void eclipseButtonSaveChanges_Click(object sender, EventArgs e)
         {
             person.Id = Convert.ToInt32(textBoxID.Text);
-            
-            if (MessageBox.Show("Czy napewo dokonać edycji danych tej osoby?", "Potwierdzenie", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            person.Name = textBoxName.Text;
+
+            person.ChangedData += (oldData, newData) =>
             {
-                osobaBindingSource.EndEdit();
-                osobaTableAdapter.Update(projektJIPP4_DanielMarkiewiczDataSet);
-
-                MessageBox.Show($"Pomyślnie zmieniono dane osoby o ID: {person.Id}", "Potwierdzenie edycji", MessageBoxButtons.OK);
-
-                this.osobaTableAdapter.FillByID(this.projektJIPP4_DanielMarkiewiczDataSet.Osoba, person.Id);
-
-                if (MessageBox.Show("Czy nowe dane w bazie danych się zgadzają?", "Potwierdzenie", MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question) == DialogResult.Yes)
+                if (newData.Length < 1)
                 {
-                    this.osobaTableAdapter.Fill(this.projektJIPP4_DanielMarkiewiczDataSet.Osoba);
+                    MessageBox.Show("Podane dane nie spełniają wymagań");
                 }
+                else if (MessageBox.Show("Czy napewo dokonać edycji danych tej osoby?", "Potwierdzenie", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    osobaBindingSource.EndEdit();
+                    osobaTableAdapter.Update(projektJIPP4_DanielMarkiewiczDataSet);
 
-                foreach (TextBox textBox in this.groupBoxEdit.Controls.OfType<TextBox>())
-                {
-                    textBox.Text = null;
-                }
+                    MessageBox.Show($"Pomyślnie zmieniono dane osoby o ID: {person.Id}", "Potwierdzenie edycji", MessageBoxButtons.OK);
 
-                foreach (TextBox textBox in this.groupBoxSearch.Controls.OfType<TextBox>())
-                {
-                    textBox.Text = null;
-                }
+                    this.osobaTableAdapter.FillByID(this.projektJIPP4_DanielMarkiewiczDataSet.Osoba, person.Id);
 
-                if (WomanSexRadioButton.Checked && person.Sex)
-                {
-                    WomanSexRadioButton.Checked = false;
-                }
-                else
-                {
-                    ManSexRadioButton.Checked = false;
-                }
+                    if (MessageBox.Show("Czy nowe dane w bazie danych się zgadzają?", "Potwierdzenie", MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        this.osobaTableAdapter.Fill(this.projektJIPP4_DanielMarkiewiczDataSet.Osoba);
+                    }
+
+                    foreach (TextBox textBox in this.groupBoxEdit.Controls.OfType<TextBox>())
+                    {
+                        textBox.Text = null;
+                    }
+
+                    foreach (TextBox textBox in this.groupBoxSearch.Controls.OfType<TextBox>())
+                    {
+                        textBox.Text = null;
+                    }
+
+                    if (WomanSexRadioButton.Checked && person.Sex)
+                    {
+                        WomanSexRadioButton.Checked = false;
+                    }
+                    else
+                    {
+                        ManSexRadioButton.Checked = false;
+                    }
                 
-            }
+                }
+            };
         }
 
         private void eclipseButtonSearchFormExit_Click(object sender, EventArgs e)
